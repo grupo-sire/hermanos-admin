@@ -1,0 +1,35 @@
+{
+  "name": "Barbearia Hermanos",
+  "short_name": "Hermanos",
+  "description": "Sistema de Gestão, Agendamento e Fidelidade da Barbearia Hermanos",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "scope": "/",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon_h.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo_hermanos_oficial.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo_hermanos.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "business",
+    "lifestyle"
+  ]
+}

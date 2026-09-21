@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Branco */
+    --foreground: 240 10% 4%; /* Grafite escuro */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 0 100% 55%; /* Vermelho Hermanos #ff1a1a */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 0 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 145 63% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 0 100% 55%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 240 5% 95%;
+    --sidebar-foreground: 240 4% 30%;
+    --sidebar-primary: 0 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 90%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 0 100% 55%;
+
+    --wine: 0 100% 55%;
+    --wine-dark: 0 100% 40%;
+  }
+
+  .dark {
+    --background: 240 5% 4%; /* #0a0a0b */
+    --foreground: 210 40% 98%;
+
+    --card: 240 4% 9%; /* #161618 */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 4% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 0 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 0 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 63% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 240 4% 15%;
+    --input: 240 4% 12%;
+    --ring: 0 100% 55%;
+
+    --sidebar-background: 240 5% 6%;
+    --sidebar-foreground: 240 5% 65%;
+    --sidebar-primary: 0 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 10%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 4% 12%;
+    --sidebar-ring: 0 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .topbar {
+    @apply flex items-center justify-between p-4 bg-card/50 border border-border rounded-xl mb-4 gap-3 flex-wrap;
+  }
+
+  .panel {
+    @apply bg-card/50 border border-border rounded-2xl p-4 shadow-lg;
+  }
+
+  .btn-wine {
+    @apply bg-primary hover:bg-primary/80 text-primary-foreground border-none transition-colors;
+  }
+
+  .btn-soft {
+    @apply border border-border text-foreground bg-secondary/50 rounded-xl px-3 py-2 font-bold text-xs cursor-pointer hover:bg-secondary transition-colors;
+  }
+
+  .input-dark {
+    @apply bg-secondary border border-border text-foreground rounded-xl px-3 py-2.5 placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors;
+  }
+
+  .badge-soft {
+    @apply border border-border bg-secondary/50 text-muted-foreground rounded-full px-2 py-1 text-xs font-bold;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+  }
+  .glass-panel:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .app-card {
+    @apply bg-card border border-border rounded-[2rem] p-5 shadow-sm shadow-black/5 transition-all duration-300 active:scale-[0.98] cursor-pointer;
+  }
+
+  .app-button {
+    @apply h-14 rounded-2xl font-bold transition-all active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  /* Clube Infinite Gold Premium styles */
+  .infinite-gold-text {
+    background: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #b8860b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  .infinite-gold-badge {
+    background: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #b8860b 100%);
+    color: #0a0a0b;
+    font-weight: 800;
+    border: none;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+  }
+
+  .infinite-gold-card {
+    background: linear-gradient(135deg, rgba(26, 26, 28, 0.9) 0%, rgba(36, 36, 40, 0.9) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .infinite-gold-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffe082, #d4af37, #b8860b);
+  }
+
+  .infinite-gold-button {
+    background: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #b8860b 100%);
+    color: #0a0a0b;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .infinite-gold-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+  }
+  .infinite-gold-button:active {
+    transform: translateY(0);
+  }
+
+  /* Custom scrollbar for mobile horizontal scrolling */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-area-top { padding-top: env(safe-area-inset-top); }
